@@ -6,6 +6,9 @@ library(socviz)
 
 # Reloading by_country from organdata
 
+organdata <- organdata
+by_country <- organdata %>% group_by(consent_law, country) %>%
+
 by_country <- organdata %>% group_by(consent_law, country) %>%
   summarize(donors_mean= mean(donors, na.rm = TRUE),
             donors_sd = sd(donors, na.rm = TRUE),
